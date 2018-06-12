@@ -24,7 +24,10 @@ public abstract class Activity extends AppCompatActivity{
         initWindows();
 
         if(initArgs(getIntent().getExtras())) {
-            getContentLayoutId();
+            //得到界面id并设置到界面中
+            int layid = getContentLayoutId();
+            setContentView(layid);
+
             initWidget();
             initData();
         }else{finish();}
